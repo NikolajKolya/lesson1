@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Lesson1/v17
+/.vs/slnx.sqlite
+/.vs
+/Lesson1/.vs/Lesson1
+/Lesson1/Lesson1/bin/Debug/net6.0
+/Lesson1/Lesson1/obj
