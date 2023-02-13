@@ -12,37 +12,44 @@ namespace Lesson1
         /// </summary>
         static void Main(string[] args)
         {
+            int c = 0;
             int a = EnterNumber("а");
             int b = EnterNumber("б");
-
-            Console.WriteLine("Введите операцию: +,-,*,/");
-
-            var enteredOperation = Console.ReadLine();
-
-            int c = 0;
-
-            switch(enteredOperation)
+            while (true)
             {
-                case "+":
-                    c = a + b;
-                    break;
+                bool isSuccess = true;
+                Console.WriteLine("Введите операцию: +,-,*,/");
 
-                case "-":
-                    c = a - b;
-                    break;
+                var enteredOperation = Console.ReadLine();
 
-                case "*":
-                    c = a * b;
-                    break;
 
-                case "/":
-                    c = a / b;
-                    break;
+                switch (enteredOperation)
+                {
+                    case "+":
+                        c = a + b;
+                        break;
 
-                default:
-                    Console.WriteLine("Некорректная операция!");
-                    Environment.Exit(1);
+                    case "-":
+                        c = a - b;
+                        break;
+
+                    case "*":
+                        c = a * b;
+                        break;
+
+                    case "/":
+                        c = a / b;
+                        break;
+
+                    default:
+                        Console.WriteLine("Некорректная операция!");
+                        isSuccess = false;
+                        break;
+                }
+                if(isSuccess == true)
+                {
                     break;
+                }
             }
 
             Console.WriteLine($"Результат: { c }");
