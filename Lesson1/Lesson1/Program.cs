@@ -15,9 +15,37 @@ namespace Lesson1
             int a = EnterNumber("а");
             int b = EnterNumber("б");
 
-            int c = a + b;
+            Console.WriteLine("Введите операцию: +,-,*,/");
 
-            Console.WriteLine($"{ a } + { b } = { c }");
+            var enteredOperation = Console.ReadLine();
+
+            int c = 0;
+
+            switch(enteredOperation)
+            {
+                case "+":
+                    c = a + b;
+                    break;
+
+                case "-":
+                    c = a - b;
+                    break;
+
+                case "*":
+                    c = a * b;
+                    break;
+
+                case "/":
+                    c = a / b;
+                    break;
+
+                default:
+                    Console.WriteLine("Некорректная операция!");
+                    Environment.Exit(1);
+                    break;
+            }
+
+            Console.WriteLine($"Результат: { c }");
         }
 
         /// <summary>
