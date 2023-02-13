@@ -68,6 +68,7 @@ namespace Lesson1
             }
 
             Console.WriteLine($"Результат { resultMessage }: { c }");
+            Console.ReadLine();
         }
 
         /// <summary>
