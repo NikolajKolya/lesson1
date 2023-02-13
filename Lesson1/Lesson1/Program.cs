@@ -26,9 +26,21 @@ namespace Lesson1
         /// <returns>Введённое число</returns>
         static int EnterNumber(string g)
         {
-            Console.WriteLine($"Введите число { g }:");
-            string enteredString = Console.ReadLine();
-            return int.Parse(enteredString);
+            while(true)
+            {
+                Console.WriteLine($"Введите число {g}:");
+                string enteredString = Console.ReadLine();
+
+                int result = 0;
+                bool isSuccess = int.TryParse(enteredString, out result);
+
+                if (isSuccess)
+                {
+                    return result;
+                }
+
+                Console.WriteLine("Вы ввели не число!");
+            }
         }
     }
 }
