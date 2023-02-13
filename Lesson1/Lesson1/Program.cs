@@ -12,7 +12,8 @@ namespace Lesson1
         /// </summary>
         static void Main(string[] args)
         {
-            int c = 0;
+            decimal c = 0;
+            string resultMessage = "";
             int a = EnterNumber("а");
             int b = EnterNumber("б");
             while (true)
@@ -22,23 +23,36 @@ namespace Lesson1
 
                 var enteredOperation = Console.ReadLine();
 
-
                 switch (enteredOperation)
                 {
                     case "+":
+                        resultMessage = "сложенија";
                         c = a + b;
                         break;
 
                     case "-":
+                        resultMessage = "вичитанија";
                         c = a - b;
                         break;
 
                     case "*":
+                        resultMessage = "умноженија";
                         c = a * b;
                         break;
 
                     case "/":
-                        c = a / b;
+                        resultMessage = "деленија";
+
+                        try
+                        {
+                            c = a / (decimal)b;
+                        }
+                        catch(Exception ex)
+                        {
+                            Console.WriteLine("На ноль делить нельзя!");
+                            Environment.Exit(1);
+                        }
+                        
                         break;
 
                     default:
@@ -46,13 +60,14 @@ namespace Lesson1
                         isSuccess = false;
                         break;
                 }
-                if(isSuccess == true)
+
+                if (isSuccess)
                 {
                     break;
                 }
             }
 
-            Console.WriteLine($"Результат: { c }");
+            Console.WriteLine($"Результат { resultMessage }: { c }");
         }
 
         /// <summary>
