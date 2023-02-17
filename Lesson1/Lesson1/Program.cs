@@ -12,6 +12,7 @@ namespace Lesson1
         /// </summary>
         static void Main(string[] args)
         {
+            int temporary = 0;
             decimal c = 0;
             string resultMessage = "";
             int a = EnterNumber("а");
@@ -19,7 +20,7 @@ namespace Lesson1
             while (true)
             {
                 bool isSuccess = true;
-                Console.WriteLine("Введите операцию: +,-,*,/");
+                Console.WriteLine("Введите операцию: +,-,*,/,i");
 
                 var enteredOperation = Console.ReadLine();
 
@@ -53,6 +54,27 @@ namespace Lesson1
                             Environment.Exit(1);
                         }
                         
+                        break;
+                    case "i":
+                        while (true)
+                        {
+                            if (b > 0)
+                            {
+                                temporary += b % 10;
+                                b = b / 10;
+                            }
+                            else if (a > 0)
+                            {
+                                temporary += a % 10;
+                                a = a / 10;
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        c = temporary;
+                        resultMessage = "сложенија цифр чисел";
                         break;
 
                     default:
