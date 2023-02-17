@@ -13,14 +13,14 @@ namespace Lesson1
         static void Main(string[] args)
         {
             int temporary = 0;
-            decimal c = 0;
+            double c = 0;
             string resultMessage = "";
             int a = EnterNumber("а");
             int b = EnterNumber("б");
             while (true)
             {
                 bool isSuccess = true;
-                Console.WriteLine("Введите операцию: +,-,*,/,i");
+                Console.WriteLine("Введите операцию: +,-,*,/,i,p");
 
                 var enteredOperation = Console.ReadLine();
 
@@ -46,7 +46,7 @@ namespace Lesson1
 
                         try
                         {
-                            c = a / (decimal)b;
+                            c = a / (double)b;
                         }
                         catch(Exception ex)
                         {
@@ -75,6 +75,10 @@ namespace Lesson1
                         }
                         c = temporary;
                         resultMessage = "сложенија цифр чисел";
+                        break;
+                    case "p":
+                         c = Math.Sqrt(a*a+b*b);
+                        resultMessage = "diagonalj";
                         break;
 
                     default:
